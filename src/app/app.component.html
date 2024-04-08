@@ -17,11 +17,15 @@
         </div>
         <div class="form-group">
           <label for="secret">Secret Questions</label>
-          <select id="secret" class="form-control" ngModel name="secret">
+          <select id="secret" class="form-control" [ngModel]="defaultQues" name="secret">
             <option value="pet">Your first Pet?</option>
             <option value="teacher">Your first teacher?</option>
           </select>
         </div>
+        <div>
+          <textarea name="questionanswer" id="qna" rows="3" class="form-control" [(ngModel)]="answer"></textarea>
+        </div>
+        <p>Your reply: {{answer}}</p>
         <button class="btn btn-primary" type="submit" [disabled]="!f.valid">Submit</button>
       </form>
     </div>
